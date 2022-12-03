@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+
+
+int main()
+{
+      int n;
+    cin>>n;
+   int scores[2000];
+    for(int i=0;i<n;i++){
+        cin>>scores[i];
+    }
+int arr[2],min=scores[0],max=scores[0];
+arr[0]=arr[1]=0;
+string str;
+for (int i=0;i<n;i++){
+    if(scores[i]>max){
+        max=scores[i];
+        arr[0]++;
+    }
+    if (scores[i]<min) {
+        min=scores[i];
+        arr[1]++;
+    }
+}
+cout<<arr[0]<<" "<<arr[1];
+return 0;
+}
